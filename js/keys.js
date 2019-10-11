@@ -1,35 +1,37 @@
-var keyPressed = false;
+var wPressed = false;
+var aPressed = false;
+var sPressed = false;
+var dPressed = false;
 
 function keyDown(event) {
-  console.log("pressed:",keyPressed)
-  if (!keyPressed) {
-    if (event.key.toLowerCase() == "w") {
-      console.log("Forward")
-      keyPressed = true;
-    } else if (event.key.toLowerCase() == "a") {
-      console.log("Left")
-      keyPressed = true;
-    } else if (event.key.toLowerCase() == "s") {
-      console.log("Backward")
-      keyPressed = true;
-    } else if (event.key.toLowerCase() == "d") {
-      console.log("Right")
-      keyPressed = true;
-    }
+  if (!aPressed && !sPressed && !dPressed && event.key.toLowerCase() == "w") {
+    console.log("Forward")
+    wPressed = true;
+  } else if (!wPressed && !sPressed && !dPressed && event.key.toLowerCase() == "a") {
+    console.log("Left")
+    aPressed = true;
+  } else if (!aPressed && !wPressed && !dPressed && event.key.toLowerCase() == "s") {
+    console.log("Backward")
+    sPressed = true;
+  } else if (!aPressed && !sPressed && !wPressed && event.key.toLowerCase() == "d") {
+    console.log("Right")
+    dPressed = true;
   }
 }
 
 function keyUp(event) {
-  if (keyPressed) {
-    if (
-      event.key.toLowerCase() == "w" ||
-      event.key.toLowerCase() == "a" ||
-      event.key.toLowerCase() == "s" ||
-      event.key.toLowerCase() == "d"
-    ) {
-      console.log("Stop")
-      keyPressed = false;
-    }
+  if (event.key.toLowerCase() == "w") {
+    console.log("Forward Up")
+    wPressed = false;
+  } else if (event.key.toLowerCase() == "a") {
+    console.log("Left Up")
+    aPressed = false;
+  } else if (event.key.toLowerCase() == "s") {
+    console.log("Backward Up")
+    sPressed = false;
+  } else if (event.key.toLowerCase() == "d") {
+    console.log("Right Up")
+    dPressed = false;
   }
 }
 
