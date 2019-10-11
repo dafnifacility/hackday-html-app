@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <style>
+      video {
+        width: 100% !important;
+        height: auto !important;
+      }
+      .status {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: red;
+        opacity: 1;
+        animation: fade 2s linear infinite;
+      }
+      .status--green {
+          background-color: green;
+        }
+        @keyframes fade {
+          0%, 100% { opacity: 0 }
+          50% { opacity: 1 }
+        }
+    </style>
+  </head>
+  <body onload="showMyFace()">
+    <div class="container container-fluid">
+      <div class="row">
+        <div class="col">
+          <span class="status status--red"></span>
+          <video id="friendsVideo" class="m-0 mt-3" autoplay playsinline></video>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
