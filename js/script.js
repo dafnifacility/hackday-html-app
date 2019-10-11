@@ -77,8 +77,13 @@ function readMessage(data) {
 
 database.on('child_added', readMessage);
 
+const constraints = window.constraints = {
+    audio: false,
+    video: true
+  };
+
 function showMyFace() {
-  navigator.mediaDevices.getUserMedia({audio:true, video:true})
+  navigator.mediaDevices.getUserMedia(constraints)
     .then(stream => yourVideo.srcObject = stream)
     .then(stream => pc.addStream(stream));
 }

@@ -4,14 +4,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <style>
+      body {
+        padding: 10px;
+      }
       video {
         width: 100% !important;
         height: auto !important;
       }
       .status {
         position: absolute;
-        top: 30px;
-        right: 30px;
+        top: 10px;
+        right: 10px;
         display: block;
         width: 20px;
         height: 20px;
@@ -30,13 +33,10 @@
     </style>
   </head>
   <body onload="showMyFace()">
-    <div class="container container-fluid">
-      <div class="row">
-        <div class="col">
-          <span class="status status--red"></span>
-          <video id="friendsVideo" class="m-0 mt-3" autoplay playsinline></video>
-        </div>
-      </div>
+    <div class="position-relative">
+      <!-- <span class="status status--red"></span> -->
+      <video id="yourVideo" autoplay muted playsinline style="display: none"></video>
+      <video id="friendsVideo" class="m-0" autoplay playsinline></video>
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src="../js/script.js"></script>
